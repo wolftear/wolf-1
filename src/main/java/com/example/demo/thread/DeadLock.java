@@ -1,8 +1,8 @@
 package com.example.demo.thread;
 
 /**
- * @Author yiche
- * @Description TODO
+ * @Author zhangzhiyong
+ * @Description 死锁例子
  * Date Created in 2019-08-21
  **/
 public class DeadLock {
