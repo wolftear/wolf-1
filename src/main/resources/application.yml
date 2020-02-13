@@ -1,0 +1,57 @@
+server:
+  port: 8011
+spring:
+  application:
+    name: autoload-cache-test
+  aop:
+    proxy-target-class: false
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/wolf_test?useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+  redis:
+    host: 127.0.0.1
+    port: 6379
+#    cluster:
+#      max-redirects: 10
+#      nodes:
+#      - 192.168.176.128:7001
+#      - 192.168.176.128:7002
+#      - 192.168.176.129:7001
+#      - 192.168.176.129:7002
+#      - 192.168.176.130:7001
+#      - 192.168.176.130:7002
+    lettuce:
+      pool:
+        maxActive: 2048
+        maxIdle: 200
+        maxWait: 1500ms
+        minIdle: 20
+    jedis:
+      pool:
+        maxActive: 2048
+        maxIdle: 200
+        maxWait: 1500ms
+        minIdle: 20
+
+autoload:
+  cache:
+    config:
+      namespace: autoload-cache-test
+      threadCnt: 2
+      maxElement: 20000
+      printSlowLog: true
+      slowLoadTime: 100
+      sortType: 2
+      checkFromCacheBeforeLoad: true
+      autoLoadPeriod: 10
+    enable: true
+    proxy-target-class: true
+    admin-user-name: zzy
+    admin-password: zzy
+mybatis:
+  configuration:
+    cache-enabled: false
+    default-statement-timeout: 5
+  mapper-locations: classpath:mybatis/*.xml

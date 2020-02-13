@@ -12,6 +12,7 @@ public class Student {
     private Integer age;
     private Integer score;
 
+    public Student(){};
     public Student(Integer id, String name, String grade, Integer age, Integer score) {
         this.id = id;
         this.name = name;
