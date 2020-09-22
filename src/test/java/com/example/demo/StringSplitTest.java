@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.stream.Student;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,5 @@ public class StringSplitTest {
         System.out.println(Long.MAX_VALUE);
 
         System.out.println(new Integer(1).toString());
-        new GCFinalize();
     }
 }
